@@ -76,8 +76,12 @@ int updateCell(int x, int y, int val){
 // Afficher la grille
 void printGrid(){
     for (size_t y = 0; y < GRID_SIZE;y++) {
-        for (size_t x = 0; x < GRID_SIZE; x++)
-            printf("%d", grid[y][x]);
+        for (size_t x = 0; x < GRID_SIZE; x++){
+            int cell = grid[y][x];
+            char c = '0';
+            if(cell == 1) c = 'X';
+            printf("(%c)", c);
+        }
         printf("\n");
     }
     printf("\n");
@@ -123,7 +127,7 @@ int main(){
         
         for (size_t i=0; i < 9; i++){
             double exec_time = startGame(it[i]);
-            printf("%6d ittérations : %f (s)\n", it[i], exec_time);
+            printf("%6d itérations : %f (s)\n", it[i], exec_time);
             fprintf(outputFile, "%10d   %lf \n", it[i], exec_time);
         }
         fclose(outputFile);

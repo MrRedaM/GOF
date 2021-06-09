@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/gof.dir/g.c.o -o gof 
